@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register here</title>
+    <style>
+    html{
+    box-sizing:content-box;
+}
+body{
+    background-color: beige;
+}
+h1{
+    font: 200%;
+    font-weight: lighter;
+    margin-top: .1em;
+}
+.intro p{
+    font-style: italic;
+    text-decoration: none;
+}
+.web{
+    display: flex;
+    justify-content: center;
+}
+.webs{
+    display: block;
+    border: 1px solid chocolate;
+    border-radius: .5em;
+    padding: .5em;
+    margin: .5em;
+}
+.input p{
+    text-align: center;
+    font-style: italic;
+    text-transform: capitalize;
+}
+.input{
+    background-image: url(basket.png.jpg) ;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    color: blueviolet;
+}
+input:hover{
+    color:chocolate;
+}
+input{
+    border-radius: 10px;
+    border: 1px;
+}
+h1{
+    text-transform: capitalize;
+    color: red;
+}
+.demo2{
+    text-transform: capitalize;
+    font-size: 100%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    color: black;
+}
+    </style>
+</head>
+<body>
+    <div class="input">
+        <p id="demo" class="demo2"></p>
+        <section class="web">
+            <li class="webs"><a href="https://www.w3schools.com/action_home.php">home</a></li>
+            <li class="webs"><a href="https://www.w3schools.com/action_home.php">register</a></li>
+            <li class="webs"><a href="https://www.w3schools.com/action_home.php">about</a></li>
+            </section>
+            <section class="title">
+                <h1>egerton basketball association</h1>
+                <p>you may apply to be part of our team</p>
+            </section>
+        <p>note that the information shared here cannot be made public</p>
+        <form name="myForm" action="https://www.w3schools.com/action_page.php" onsubmit="return validateForm()"  method="post">
+            <label for="name">NAME:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="faculty">Faculty:</label><br>
+            <input type="text" id="Faculty" name="Faculty"><br>
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age"><br>
+            <label for="admission">Admission year:</label><br>
+            <input type="date" id="admission" name="admissiondate"><br>
+            <label for="password1">New password</label><br>
+            <input type="password" id="password1" name="password1"><br>
+            <label for="password2">Confirm password</label><br>
+            <input type="password" id="password2" name="password2"><br>
+            <label for="gender">Gender:</label><br>
+            <input type="gender" id="gender" list="genders" name="gender"><br>
+            <datalist id="genders">
+                <option value="male"></option>
+                <option value="female"></option>
+                <option value="bisexual"></option>
+            </datalist><br>
+            <label for="submit"></label><br>
+           <input type="submit"  id="submit" value="submit"><br>
+        </form>
+        </section>
+</div>
+<script>
+function validateForm(){
+var x=document.forms["myForm"] ["name"].value;
+var y=document.forms["myForm"] ["Faculty"].value;
+var z=document.forms["myForm"] ["age"].value;
+var a=document.forms["myForm"] ["admissiondate"].value;
+var b=document.forms["myForm"] ["password1"].value;
+var c=document.forms ["myForm"] ["password2"].value;
+var d=document.forms["myForm"] ["gender"].value;
+var age=Number(document.getElementById("age").value);
+if(x==""){
+    alert("The Faculty field must be filled");
+    return false;
+}
+else if(y==""){
+    alert("The name field must be filled");
+    return false;
+}
+if(z==""){
+    alert("Age field must be filled");
+    return false;
+}
+else if(a==""){
+    alert("Addmission field must be filled");
+    return false;
+}
+if(b==""){
+    alert("Password field must be filled");
+    return false;
+}
+else if(c==""){
+    alert("Password confirmation required");
+    return false;
+}
+else if(d==""){
+    alert("Gender field must be filled");
+    return false;
+}
+if(isNaN(age)){
+    alert("input a valid age"); 
+    return false;
+}
+else if(age<18){
+    alert("The programs accepts above 18 years");
+    return false;
+}
+else if(age>27){
+    alert("The progam accepts below 27 years");
+    return false;
+}
+function myPassword(pass1,pass2){
+        if(pass1==pass2){
+            return true;
+        }
+        else{
+            alert("The password do not match");
+            return false;
+        }
+        if(conf==true){
+       return true;
+ }
+ else{
+    return false;
+ }
+ }
+ function secondpassword(){
+    conf=confirm("ARE YOU SURE TO SUBMIT THE INFORMATION");
+    g=document.getElementById("password1").value;
+    h=document.getElementById("password2").value;
+    return myPassword(g,h,conf);
+ } 
+ return secondpassword();
+}
+</script>
+<script>
+    if(new Date().getHours()<12)
+    {
+        var greeting="Good Morning";
+        document.getElementById("demo").innerHTML=greeting;
+    }
+    else if(new Date().getHours()<16){
+        var greeting="Good Afternoon";
+        document.getElementById("demo").innerHTML=greeting;
+    }
+    else {var greeting="Good evening";
+        document.getElementById("demo").innerHTML=greeting
+    }
+
+</script>
+</body>
+</html>
